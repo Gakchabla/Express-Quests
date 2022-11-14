@@ -17,26 +17,7 @@ const database = mysql.createPool({
   database: process.env.DB_NAME,
 
 });
-database.getConnection()
-.then(()=>{console.log("can reach databse");
-})
-.catch((err)=>{console.log(err);
-});
 
-database
 
-  .query("select * from movies")
-
-  .then(([movies]) => {
-
-    console.log(movies);
-
-  })
-
-  .catch((err) => {
-
-    console.error(err);
-
-  });
 
   module.exports = database;
