@@ -92,9 +92,24 @@ const updateUser = (req, res) =>{
   });
 }
 
+const deleteUser = (req, res) =>{
+  const id = req.params.id;
+
+  database
+  .query("DELETE users WHERE id= ?", [id])
+  .then(([result])=>{
+    if (result.affectedRows) res.status(204)
+    else res.status(404).send('not found')
+  })
+  .catch((err)=>{
+  console.error(err);
+  res.status(500).send("Error deleting the movie")})
+}
+
   module.exports = {
     getUsers,
     getUsersById,
     postUser,
     updateUser,
+    deleteUser,
   };
