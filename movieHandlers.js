@@ -64,7 +64,7 @@ database
 res.location(`/api/movies/${result.insertId}`).sendStatus(200)
 })
 .catch((err)=>{console.error(err);
-res.status(500).Send("Error saving the movie");
+res.status(500).send("Error saving the movie");
 });
 };
 

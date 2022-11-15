@@ -81,13 +81,13 @@ const updateUser = (req, res) =>{
     if (result.affectedRows === 0){
       res.status(404).send('not found')
     }
-    else {res.status(204)}
+    else {res.status(204).send("User edited")}
   })
   .catch((err) => {
-
+    
     console.error(err);
 
-    res.status(500).send("Error editing the movie");
+    res.status(500).send("Error editing the user");
 
   });
 }
