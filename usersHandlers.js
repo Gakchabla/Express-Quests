@@ -76,7 +76,7 @@ const postUser = (req, res) => {
   database
     .query(
       "INSERT INTO users (firstname, lastname, email, city, language, hashedPassword) VALUES (?,?,?,?,?,?)",
-      [firstname, lastname, email, city, language]
+      [firstname, lastname, email, city, language, hashedPassword]
     )
 
     .then(([result]) => {
